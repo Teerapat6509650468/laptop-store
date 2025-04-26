@@ -1,13 +1,13 @@
-package tu.comsci.handytools;
+package tu.comsci.laptophub;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HandytoolsApplication {
+public class LaptopHubApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HandytoolsApplication.class, args);
+		SpringApplication.run(LaptopHubApplication.class, args);
 	}
 
 }
