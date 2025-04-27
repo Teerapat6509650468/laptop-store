@@ -23,7 +23,7 @@ public class LaptopService {
         return laptopRepository.findAll();
     }
 
-    public boolean orderLaptop(Long id) {
+    public boolean reserveLaptop(Long id) {
         Optional<Laptop> optionalLaptop = laptopRepository.findById(id);
         if (optionalLaptop.isPresent()) {
             Laptop laptop = optionalLaptop.get();

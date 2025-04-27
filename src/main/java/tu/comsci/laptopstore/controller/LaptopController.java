@@ -27,9 +27,9 @@ public class LaptopController {
         return laptopService.getAllLaptops();
     }
 
-    @PostMapping("laptops/{id}/order")
+    @PostMapping("/{id}/reserve")
     public ResponseEntity<String> orderLaptop(@PathVariable Long id) {
-        boolean success = laptopService.orderLaptop(id);
+        boolean success = laptopService.reserveLaptop(id);
         if (success) {
             return ResponseEntity.status(HttpStatus.OK).body("Laptop reserved successfully!.");
             
