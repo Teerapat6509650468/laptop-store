@@ -29,7 +29,9 @@ public class Laptop {
     private int storage;
     private double price;
 
-    
+    // Reserved status for the laptop
+    private boolean reserved = false;
+
 	// Custom constructor without id
 	public Laptop(String brand, String model, String processor, int ram, int storage, double price) {
 		this.brand = brand;

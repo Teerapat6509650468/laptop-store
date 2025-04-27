@@ -4,6 +4,8 @@ import tu.comsci.laptopstore.model.Laptop;
 import tu.comsci.laptopstore.service.LaptopService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,5 +25,16 @@ public class LaptopController {
     @GetMapping
     public List<Laptop> getAllLaptops() {
         return laptopService.getAllLaptops();
+    }
+
+    @PostMapping("/laptops/{id}/order")
+    public ResponseEntity<String> orderLaptop(@PathVariable Long id) {
+        boolean success = laptopService.orderLaptop(id);
+        if (success) {
+            return ResponseEntity.status(HttpStatus.OK).body("Laptop reserved successfully!.");
+            
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Laptop is already reserved or not found.");
+        }
     }
 }

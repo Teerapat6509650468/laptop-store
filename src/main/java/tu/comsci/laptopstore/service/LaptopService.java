@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LaptopService {
@@ -21,4 +22,18 @@ public class LaptopService {
     public List<Laptop> getAllLaptops() {
         return laptopRepository.findAll();
     }
+
+    public boolean orderLaptop(Long id) {
+        Optional<Laptop> optionalLaptop = laptopRepository.findById(id);
+        if (optionalLaptop.isPresent()) {
+            Laptop laptop = optionalLaptop.get();
+            if (!laptop.isReserved()) {
+                laptop.setReserved(true);
+                laptopRepository.save(laptop);
+                return true;
+            }
+        }
+        return false;
+    }
+    
 }
