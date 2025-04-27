@@ -27,7 +27,7 @@ public class LaptopController {
         return laptopService.getAllLaptops();
     }
 
-    @PostMapping("/laptops/{id}/order")
+    @PostMapping("laptops/{id}/order")
     public ResponseEntity<String> orderLaptop(@PathVariable Long id) {
         boolean success = laptopService.orderLaptop(id);
         if (success) {
