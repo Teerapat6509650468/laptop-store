@@ -1,6 +1,6 @@
-### GET request to fetch all laptops
+###
 GET http://localhost:8080/laptops
 
-### POST request to reserve a laptop by ID
+###
 POST http://localhost:8080/laptops/1/reserve
 Content-Type: application/json
