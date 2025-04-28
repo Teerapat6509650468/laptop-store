@@ -4,3 +4,17 @@ GET http://localhost:8080/laptops
 ###
 POST http://localhost:8080/laptops/1/reserve
 Content-Type: application/json
+
+###
+GET http://localhost:8080/store/customers
+
+###
+POST http://localhost:8080/store/customers/add
+Content-Type: application/json
+
+{
+  "name": "Sophia Martinez",
+  "email": "sophia.martinez@example.com",
+  "phone": "555-3457",
+  "address": "808 Spruce St"
+}
